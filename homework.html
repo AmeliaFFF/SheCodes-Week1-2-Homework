@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheCodes Basic: Week 1 & 2 Homework</title>
+    <style>
+      h1 {
+        color: #1a64d6;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 0;
+      }
+
+      h2 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        margin-top: 12px;
+      }
+
+      h3 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      p {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      div {
+        background-color: #ffffff;
+        width: 500px;
+        margin: 0 auto;
+        font-size: 1.2em;
+        padding: 20px 80px 20px 80px;
+        box-sizing: border-box;
+        border: 1px solid #ffffff;
+        border-radius: 20px;
+        transition: all 200ms ease-in-out;
+      }
+
+      div:hover {
+        background-color: #fffbef;
+        border: 1px solid #fffbef;
+        border-radius: 20px;
+      }
+
+      button {
+        background-color: #1a64d6;
+        color: #ffffff;
+        border: 1px solid #1a64d6;
+        border-radius: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        display: block;
+        margin: 0 auto;
+        padding: 20px 30px 20px 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 200ms ease-in-out;
+      }
+
+      button:hover {
+        background-color: #ffffff;
+        color: #1a64d6;
+      }
+
+      .low {
+        font-weight: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>⛅️<br />Currently 21°C in Tokyo</h1>
+    <h2><span class="low">13°C /</span> 23°C</h2>
+    <div>
+      <h3>🌧️ Tomorrow</h3>
+      <p>10°C / <strong>22°C</strong></p>
+    </div>
+    <div>
+      <h3>🌤️ Saturday</h3>
+      <p>15°C / <strong>17°C</strong></p>
+    </div>
+    <div>
+      <h3>☀️ Sunday</h3>
+      <p>25°C / <strong>28°C</strong></p>
+    </div>
+    <p></p>
+    <button>Change City</button>
+    <p>Coded by Amelia White</p>
+    <script>
+      function weather() {
+        let city = prompt("What city do you live in?");
+        let temperature = prompt("What temperature is it?");
+        let heading = document.querySelector("h1");
+
+        if (temperature >= 0) {
+          heading.innerHTML = `😄<br />Currently ${temperature}°C in ${city}`;
+        } else {
+          heading.innerHTML = `😟<br />Currently ${temperature}°C in ${city}`;
+        }
+      }
+
+      let changeCity = document.querySelector("button");
+      changeCity.addEventListener("click", weather);
+    </script>
+  </body>
+</html>
